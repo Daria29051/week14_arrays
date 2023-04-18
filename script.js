@@ -57,8 +57,10 @@ directors.forEach (function (item) {
     <p class="director__films"><a class="director__film-link"  href="${item.films}" target="_blank">Фильмография</a></p>`
 })
 
-// новый массив с лучшими фильмами
-const topFilms = [];
-topFilms = directors.forEach (function (item) {
-    topFilmsElement.innerHTML += `${item.top_rated_film}, ` 
+// создаём новый массив с лучшими фильмами
+
+const topFilmsList = directors.map(function (item) {
+    return item.top_rated_film;
 }); 
+
+topFilmsElement.innerHTML = `${topFilmsList}`; 
