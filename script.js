@@ -45,41 +45,20 @@ const directors = [
 
 // забираем элементы html-файла в переменные
   const directorElement = document.querySelector('.director__item');
-//   const directorName = document.querySelector('.director__name');
-//   const directorCareer = document.querySelector('.director__career');
-//   const directorFilms = document.querySelector('.director__films');
+  const topFilmsElement = document.querySelector('.director__top-films');
+
 
   
 // перебираем массив
 directors.forEach (function (item) {
     directorElement.innerHTML +=
-    `
-    <p class="director__name">${item.name}</p>
+    `<p class="director__name">${item.name}</p>
     <p class="director__career">${item.career}</p>
     <p class="director__films"><a class="director__film-link"  href="${item.films}" target="_blank">Фильмография</a></p>`
 })
 
-//   directorElement.innerHTML +=
-//   `<p class="directors__name">${showDirectorName()}</p>
-//   <p class="directors__career">${showDirectorCareer()}</p>`;
-
-
-
-
-//   //   вывод name
-//   let showDirectorName = () => {
-//     for (let director of directors)
-//    return director.name;
-//   }
-
-//   //   вывод career
-//   let showDirectorCareer = () => {
-//     for (let director of directors)
-//    return director.career;
-//   }
-
-//     //   вывод films
-//     let showDirectorFilms = () => {
-//         for (let director of directors)
-//        return director.films;
-//       }
+// новый массив с лучшими фильмами
+const topFilms = [];
+topFilms = directors.forEach (function (item) {
+    topFilmsElement.innerHTML += `${item.top_rated_film}, ` 
+}); 
