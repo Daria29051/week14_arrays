@@ -63,4 +63,5 @@ const topFilmsList = directors.map(function (item) {
     return item.top_rated_film;
 }); 
 
-topFilmsElement.innerHTML = `${topFilmsList}`; 
+// приводим массив к строке
+topFilmsElement.innerHTML = topFilmsList.join(", "); 
