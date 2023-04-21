@@ -9,12 +9,12 @@ const arr8 = ['b', 'e', 'c'];
 
 
 const intersection = (...arrays) => {
-    let result = arrays[0].filter(el => arrays[1].includes(el))
-    if (arrays.length > 2) intersection(result, ...arrays.slice(2))
-    return [...new Set(result)];
+    let result = arrays[0].filter(x => arrays[1].includes(x)) //находим пересечение массивов
+    return [...new Set(result)]; //возвращаем массив уникальных значений
   }
 
 
    console.log(intersection(arr1, arr2)) // [2]
    console.log(intersection(arr3, arr4, arr5)) // ['b']
    console.log(intersection(arr6, arr7, arr8)) // ['b', 'e']
+
